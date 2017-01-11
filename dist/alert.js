@@ -1,10 +1,10 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"));
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
+		define(["react"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactReduxAlert"] = factory(require("React"));
+		exports["ReactReduxAlert"] = factory(require("react"));
 	else
 		root["ReactReduxAlert"] = factory(root["React"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
@@ -94,7 +94,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(exports, "HIDE_ALERT", function() { return HIDE_ALERT; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "SUCCESS", function() { return SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "ERROR", function() { return ERROR; });
-/* harmony export (immutable) */ exports["default"] = reducer;
+/* harmony export (binding) */ __webpack_require__.d(exports, "alertReducer", function() { return alertReducer; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "Alert", function() { return Alert; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "AlertProvider", function() { return AlertProvider; });
 /* harmony export (binding) */ __webpack_require__.d(exports, "connectAlert", function() { return connectAlert; });
@@ -118,10 +118,10 @@ var ERROR = 'ERROR';
 var initialState = {
   show: false,
   message: '',
-  alertType: constants.ERROR
+  alertType: ERROR
 };
 
-function reducer() {
+var alertReducer = function alertReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
 
@@ -133,7 +133,7 @@ function reducer() {
     default:
       return state;
   }
-}
+};
 
 var alertClassnames = function alertClassnames(type) {
   var alert = 'alert';
