@@ -10,10 +10,10 @@ export const ERROR = 'ERROR';
 const initialState = {
   show: false,
   message: '',
-  alertType: constants.ERROR
+  alertType: ERROR
 };
 
-export default function reducer(state = initialState, action) {
+export const alertReducer = function(state = initialState, action) {
   switch (action.type) {
   case SHOW_ALERT:
     return {show: true, message: action.message, alertType: action.alertType};
