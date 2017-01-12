@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import './style.css'
 
 // constants
 export const SHOW_ALERT = 'SHOW_ALERT';
