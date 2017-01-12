@@ -2,12 +2,16 @@
 
 > HOC to show bootstrap like alerts
 
+## Demo
+
+https://jsbin.com/fatole/edit?js,output
+
 ## Usage
 
 ### Setup
 
-```jsx
-import { connectAlert, alertReducer } from 'react-redux-alert';
+```js
+import { connectAlert, alertReducer, SHOW_ALERT, SUCCESS } from 'react-redux-alert';
 
 const store = createStore(combineReducers({yourReducers, alertReducer}), composeEnhancers(
   applyMiddleware(thunkMiddleware)
@@ -25,10 +29,10 @@ const ComponentWithAlert = connectAlert(YourComponent);
 
 ### Show Alert
 
-```
+```js
 dispatch({
-  type: 'SHOW_ALERT',
-  alertType: 'SUCCESS',
+  type: SHOW_ALERT,
+  alertType: SUCCESS,
   show: true,
   message: "Hello"
 })
