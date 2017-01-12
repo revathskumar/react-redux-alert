@@ -1,20 +1,20 @@
-import React, { Component, PropTypes } from 'react';
-import './style.css'
+import React, {Component, PropTypes} from 'react';
+import './style.css';
 
 // constants
 export const SHOW_ALERT = '@@react-redux-alert/SHOW';
 export const HIDE_ALERT = '@@react-redux-alert/HIDE';
-export const SUCCESS    = '@@react-redux-alert/SUCCESS';
-export const ERROR      = '@@react-redux-alert/ERROR';
+export const SUCCESS = '@@react-redux-alert/SUCCESS';
+export const ERROR = '@@react-redux-alert/ERROR';
 
-//reducer
+// reducer
 const initialState = {
   show: false,
   message: '',
   alertType: ERROR
 };
 
-export const alertReducer = function(state = initialState, action) {
+export const alertReducer = function (state = initialState, action) {
   switch (action.type) {
   case SHOW_ALERT:
     return {show: true, message: action.message, alertType: action.alertType};
@@ -23,23 +23,23 @@ export const alertReducer = function(state = initialState, action) {
   default:
     return state;
   }
-}
+};
 
 const alertClassnames = type => {
   const alert = 'alert';
 
-  switch(type) {
-    case SUCCESS:
-      return `${alert} alert--success`;
-    case ERROR:
-      return `${alert} alert--error`;
-    default:
-      return alert;
+  switch (type) {
+  case SUCCESS:
+    return `${alert} alert--success`;
+  case ERROR:
+    return `${alert} alert--error`;
+  default:
+    return alert;
   }
-}
+};
 
 // UI component
-export const Alert = ({ type, children}) => {
+export const Alert = ({type, children}) => {
   return (
     <div className={alertClassnames(type)}>
       {children}
@@ -48,7 +48,7 @@ export const Alert = ({ type, children}) => {
 };
 
 Alert.defaultProps = {
-  type : ERROR
+  type: ERROR
 };
 
 Alert.propTypes = {
@@ -76,13 +76,14 @@ AlertProvider.propTypes = {
   children: PropTypes.element
 };
 
-export const connectAlert = (Comp) => {
+export const connectAlert = Comp => {
   return class extends Component {
+
     static displayName = `connectAlert(${Comp.displayName})`;
 
     static propTypes = {
       alert: PropTypes.object
-    }
+    };
 
     render() {
       return (
