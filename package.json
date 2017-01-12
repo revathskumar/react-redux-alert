@@ -5,17 +5,21 @@
   "main": "dist/alert.js",
   "scripts": {
     "build": "webpack -p",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js"
   },
   "author": "Revath S Kumar <rsk+npm@revathskumar.com> (http://blog.revathskumar.com)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
+    "eslint": "^3.13.1",
+    "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "style-loader": "^0.13.1",
     "webpack": "2.2.0-rc.3"
