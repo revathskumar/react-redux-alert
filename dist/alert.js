@@ -118,10 +118,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 // constants
-var SHOW_ALERT = 'SHOW_ALERT';
-var HIDE_ALERT = 'HIDE_ALERT';
-var SUCCESS = 'SUCCESS';
-var ERROR = 'ERROR';
+var SHOW_ALERT = '@@react-redux-alert/SHOW';
+var HIDE_ALERT = '@@react-redux-alert/HIDE';
+var SUCCESS = '@@react-redux-alert/SUCCESS';
+var ERROR = '@@react-redux-alert/ERROR';
 
 //reducer
 var initialState = {
