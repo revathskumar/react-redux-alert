@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import './style.css'
 
 // constants
-export const SHOW_ALERT = 'SHOW_ALERT';
-export const HIDE_ALERT = 'HIDE_ALERT';
-export const SUCCESS = 'SUCCESS';
-export const ERROR = 'ERROR';
+export const SHOW_ALERT = '@@react-redux-alert/SHOW';
+export const HIDE_ALERT = '@@react-redux-alert/HIDE';
+export const SUCCESS    = '@@react-redux-alert/SUCCESS';
+export const ERROR      = '@@react-redux-alert/ERROR';
 
 //reducer
 const initialState = {
